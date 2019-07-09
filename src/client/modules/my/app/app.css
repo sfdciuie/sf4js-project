@@ -1,0 +1,13 @@
+.page-wrapper {
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+    background-color: #f8f9fa;
+    min-height: 100vh;
+}
+
+.page-main {
+    display: flex;
+    flex-grow: 1;
+    padding: 2rem;
+}

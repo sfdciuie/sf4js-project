@@ -1,0 +1,8 @@
+<template>
+    <div class="box">
+        <h2>Session List</h2>
+        <template for:each={sessions} for:item="session">
+            <button key={session.id} type="button" onclick={handleSessionClick}>{session.name}</button>
+        </template>
+    </div>
+</template>

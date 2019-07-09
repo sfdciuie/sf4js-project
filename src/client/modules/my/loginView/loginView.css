@@ -1,0 +1,63 @@
+:host {
+    display: flex;
+    align-items: center;
+}
+
+.login-wrapper {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.box {
+    background-color: #fff;
+    background-clip: border-box;
+    border: 1px solid #dee2e6;
+    border-radius: 0.5rem;
+    margin: auto;
+    padding: .75rem;
+}
+
+.box.login {
+    max-width: 50vw;
+    display: flex;
+    flex-grow: 1;
+    flex-direction: column;
+    align-items: center;
+}
+
+h2 {
+    font-size: 1.5rem;
+    color: #212529;
+}
+
+button {
+    font-weight: 600;
+    text-align: center;
+    vertical-align: middle;
+    user-select: none;
+    border: 1px solid transparent;
+    padding: 0.3125rem 1rem;
+    font-size: 1rem;
+    line-height: 1.5;
+    border-radius: 0.25rem;
+    transition: color 0.15s ease-in-out, background-color 0.15s ease-in-out, border-color 0.15s ease-in-out, box-shadow 0.15s ease-in-out;
+}
+
+button:not(:disabled) {
+    cursor: pointer;
+}
+
+button.brand {
+    color: #fff;
+    background-color: #da1b60;
+    background-image: linear-gradient(to right,#ff8a00,#da1b60);
+    border-color: #da1b60;
+}
+
+button.brand:hover {
+    color: #fff;
+    background-color: #da1b60;
+    background-image: none;
+    border-color: #ff8a00;
+}
