@@ -3,6 +3,12 @@
     margin: 0 1rem 1rem 1rem;
 }
 
+@media (min-width: 320px) and (max-width: 480px) {
+    :host {
+        margin: 0 0 1rem 0;
+    }
+}
+
 .box {
     background-color: #fff;
     background-clip: border-box;

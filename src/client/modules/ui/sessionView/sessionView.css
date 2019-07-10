@@ -83,3 +83,13 @@ dt {
 .speaker-list {
     display: flex;
 }
+
+@media (min-width: 320px) and (max-width: 480px) {
+    :host {
+        margin: 1rem;
+    }
+
+    .speaker-list {
+        flex-direction: column;
+    }
+}

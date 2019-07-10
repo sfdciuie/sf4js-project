@@ -64,6 +64,9 @@ button.brand:hover {
     margin: 0.5rem;
     padding: 0.5rem;
     color: #424242;
+    background-color: transparent;
+    border-left: 3px solid #da1b60;
+    border-radius: 0 0.5rem 0.5rem 0;
 }
 
 .session:hover {
