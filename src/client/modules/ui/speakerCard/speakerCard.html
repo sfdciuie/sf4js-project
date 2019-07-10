@@ -1,3 +1,11 @@
 <template>
-    <div class="box"></div>
+    <div class="box red">
+        <h4>{speaker.First_Name__c} {speaker.Last_Name__c}</h4>
+        <dl>
+            <dt>Bio</dt>
+            <dv>{speaker.Bio__c}</dv>
+            <dt>Email</dt>
+            <dv>{speaker.Email__c}</dv>
+        </dl>
+    </div>
 </template>
