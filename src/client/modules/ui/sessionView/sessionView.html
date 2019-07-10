@@ -1,0 +1,28 @@
+<template>
+    <div class="box">
+        <div class="box-header">
+            <h2>{session.Name}</h2>
+            <button onclick={handleBack} type="button" class="brand">
+                &lt; Back
+            </button>
+        </div>
+
+        <!-- Session fields -->
+        <dl>
+            <dt>Description</dt>
+            <dv>{session.Description__c}</dv>
+            <dt>Room</dt>
+            <dv>{session.Room__c}</dv>
+        </dl>
+
+        <h3>Speakers</h3>
+        <div class="speaker-list">
+            <template for:each={speakers} for:item="speaker">
+                <ui-speaker-card
+                    key={speaker.Id}
+                    speaker={speaker}
+                ></ui-speaker-card>
+            </template>
+        </div>
+    </div>
+</template>

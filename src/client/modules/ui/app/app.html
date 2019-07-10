@@ -1,23 +1,26 @@
 <template>
     <div class="page-wrapper">
-        <my-header
+        <ui-header
             is-user-logged-in={isUserLoggedIn}
             onlogout={handleLogout}
-        ></my-header>
+        ></ui-header>
         <main class="page-main">
             <!-- Login view -->
             <template if:true={isLoginView}>
-                <my-login-view onlogin={handleLogin}></my-login-view>
+                <ui-login-view onlogin={handleLogin}></ui-login-view>
             </template>
             <!-- Session list view -->
             <template if:true={isSessionListView}>
-                <my-session-list-view
+                <ui-session-list-view
                     onnavigate={handleNavigate}
-                ></my-session-list-view>
+                ></ui-session-list-view>
             </template>
             <!-- Session view -->
             <template if:true={isSessionView}>
-                <my-session-view onnavigate={handleNavigate}></my-session-view>
+                <ui-session-view
+                    session-id={view.params.sessionId}
+                    onnavigate={handleNavigate}
+                ></ui-session-view>
             </template>
         </main>
     </div>

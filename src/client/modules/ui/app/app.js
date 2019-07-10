@@ -4,42 +4,42 @@ import {
     LOGIN_VIEW,
     SESSION_LIST_VIEW,
     SESSION_VIEW
-} from 'my/navigationUtil';
+} from 'ui/navigationUtil';
 
 export default class App extends LightningElement {
-    @track isUserLoggedIn = false;
-    @track view = LOGIN_VIEW;
+    @track isUserLoggedIn = true;
+    @track view = { name: SESSION_VIEW, params: { sessionId: '1' } };
 
     handleLogin() {
         // TODO: trigger OAuth login flow here
-        this.view = SESSION_LIST_VIEW;
+        this.view = { name: SESSION_LIST_VIEW };
         this.isUserLoggedIn = true;
     }
 
     handleLogout() {
         // TODO: trigger OAuth logout flow here
-        this.view = LOGIN_VIEW;
+        this.view = { name: LOGIN_VIEW };
         this.isUserLoggedIn = false;
     }
 
     handleNavigate(event) {
         const targetView = event.detail.view;
-        if (VIEWS.some(view => view === targetView)) {
+        if (VIEWS.some(viewName => viewName === targetView.name)) {
             this.view = targetView;
         } else {
-            throw new Error('Unknown view: ' + targetView);
+            throw new Error(`Unknown view ${targetView.name}`);
         }
     }
 
     get isLoginView() {
-        return this.view === LOGIN_VIEW;
+        return this.view.name === LOGIN_VIEW;
     }
 
     get isSessionListView() {
-        return this.view === SESSION_LIST_VIEW;
+        return this.view.name === SESSION_LIST_VIEW;
     }
 
     get isSessionView() {
-        return this.view === SESSION_VIEW;
+        return this.view.name === SESSION_VIEW;
     }
 }

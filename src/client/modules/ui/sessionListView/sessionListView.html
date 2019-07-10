@@ -4,12 +4,13 @@
         <div class="list-wrapper">
             <template for:each={sessions} for:item="session">
                 <button
-                    key={session.id}
+                    key={session.Id}
+                    data-session-id={session.Id}
                     type="button"
                     class="session"
                     onclick={handleSessionClick}
                 >
-                    {session.name}
+                    {session.Name}
                 </button>
             </template>
         </div>
