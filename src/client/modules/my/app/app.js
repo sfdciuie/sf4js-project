@@ -7,12 +7,19 @@ import {
 } from 'my/navigationUtil';
 
 export default class App extends LightningElement {
-    @track isLogged = false;
+    @track isUserLoggedIn = false;
     @track view = LOGIN_VIEW;
 
     handleLogin() {
-        // TODO: trigger OAuth flow here
+        // TODO: trigger OAuth login flow here
         this.view = SESSION_LIST_VIEW;
+        this.isUserLoggedIn = true;
+    }
+
+    handleLogout() {
+        // TODO: trigger OAuth logout flow here
+        this.view = LOGIN_VIEW;
+        this.isUserLoggedIn = false;
     }
 
     handleNavigate(event) {

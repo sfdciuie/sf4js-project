@@ -1,6 +1,9 @@
 <template>
     <div class="page-wrapper">
-        <my-header onnavigate={handleNavigate}></my-header>
+        <my-header
+            is-user-logged-in={isUserLoggedIn}
+            onlogout={handleLogout}
+        ></my-header>
         <main class="page-main">
             <!-- Login view -->
             <template if:true={isLoginView}>

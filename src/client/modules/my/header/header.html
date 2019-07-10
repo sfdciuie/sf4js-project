@@ -8,7 +8,11 @@
                 <!-- list items here -->
             </ul>
             <div class="actions">
-                <button type="button" class="brand">About</button>
+                <template if:true={isUserLoggedIn}>
+                    <button type="button" class="brand" onclick={handleLogout}>
+                        Log Out
+                    </button>
+                </template>
             </div>
         </nav>
     </header>
