@@ -1,4 +1,3 @@
 import { LightningElement } from 'lwc';
 
-export default class SessionView extends LightningElement {
-}
+export default class SessionView extends LightningElement {}

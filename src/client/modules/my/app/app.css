@@ -9,5 +9,7 @@
 .page-main {
     display: flex;
     flex-grow: 1;
-    padding: 2rem;
+    box-sizing: border-box;
+    width: 100%;
+    overflow: auto;
 }

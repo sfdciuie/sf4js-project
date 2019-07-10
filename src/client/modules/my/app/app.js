@@ -1,5 +1,10 @@
 import { LightningElement, track } from 'lwc';
-import { VIEWS, LOGIN_VIEW, SESSION_LIST_VIEW, SESSION_VIEW } from 'my/navigationUtil';
+import {
+    VIEWS,
+    LOGIN_VIEW,
+    SESSION_LIST_VIEW,
+    SESSION_VIEW
+} from 'my/navigationUtil';
 
 export default class App extends LightningElement {
     @track isLogged = false;
@@ -15,7 +20,7 @@ export default class App extends LightningElement {
         if (VIEWS.some(view => view === targetView)) {
             this.view = targetView;
         } else {
-            throw new Error('Unknown view: '+ targetView);
+            throw new Error('Unknown view: ' + targetView);
         }
     }
 
