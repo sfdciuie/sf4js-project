@@ -7,13 +7,15 @@
 1. Navigate to `sfdx-project`
 2. Run `install.sh`
 3. Create a **Connected App** with these settings:
-   | Attribute | Value |
-   | ------------- |-------------|
-   | Connected App Name | Conference Management API |
-   | Enable OAuth Settings | checked |
-   | Contact Email | &lt;your_email&gt; |
-   | Callback URL | http://localhost:3002/oauth2/callback |
-   | Selected OAuth Scopes | Access and manage your data (api) |
+
+    | Attribute             | Value                                 |
+    | --------------------- | ------------------------------------- |
+    | Connected App Name    | Conference Management API             |
+    | Enable OAuth Settings | checked                               |
+    | Contact Email         | &lt;your_email&gt;                    |
+    | Callback URL          | http://localhost:3002/oauth2/callback |
+    | Selected OAuth Scopes | Access and manage your data (api)     |
+
 4. Copy the **Consumer Key** and **Consumer Secret** values for the Node app configuration.
 
 ### Node App Configuration
