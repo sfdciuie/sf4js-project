@@ -1,14 +1,23 @@
-# conference-management
+# Conference Management App
 
-Here will be some information about the app.
+## Installation
 
-## How to start?
+### Salesforce Org Setup
 
-Start simple by running `yarn watch` (or `npm run watch`, if you set up the project with `npm`). This will start the project with a local development server.
+1. Navigate to `sfdx-project`
+2. Run `install.sh`
+3. Create a **Connected App** with these settings:
+   | Attribute | Value |
+   | ------------- |-------------|
+   | Connected App Name | Conference Management API |
+   | Enable OAuth Settings | checked |
+   | Contact Email | &lt;your_email&gt; |
+   | Callback URL | http://localhost:3002/oauth2/callback |
+   | Selected OAuth Scopes | Access and manage your data (api) |
+4. Copy the **Consumer Key** and **Consumer Secret** values for the Node app configuration.
 
-The source files are located in the [`src`](./src) folder. All web components are within the [`src/client/modules`](./src/modules) folder. The folder hierarchy also represents the naming structure of the web components. The entry file for the custom Express configuration can be found in the ['src/server'](./src/server) folder..
+### Node App Configuration
 
-## Configuration
 1. Create a .env file in the root folder of your project
 2. Add the below 4 entries to the file.
     - **CLIENT_ID**: Client Id from the Connected App created in Salesforce
@@ -17,3 +26,8 @@ The source files are located in the [`src`](./src) folder. All web components ar
     - **SESSION_SECRET_KEY**: Key used for signing and/or encrypting cookies set by the application to maintain session state
 
 Find more information on the main repo on [GitHub](https://github.com/muenzpraeger/lwc-create-app).
+
+## Node App Startup
+
+1. Build the app with `npm run build`
+2. Start the app with `npm run serve`
