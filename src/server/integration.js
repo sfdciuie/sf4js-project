@@ -3,37 +3,49 @@ const jsforce = require('jsforce');
 
 module.exports = {
     /**
-     *  Runs an SOQL query on Salesforce
-     *  @returns {Array}
+     * Runs an SOQL query on Salesforce
+     * @param {jsforce.Connection} conn - jsforce Connection
+     * @param {string} soqlQuery - SOQL query
+     * @returns {Array} Array of records returned by SOQL query
      */
-    runSoql: (req, res, soqlQuery) => {
-        const conn = new jsforce.Connection({
-            instanceUrl: req.session.sfdcInstanceUrl,
-            accessToken: req.session.sfdcAccessToken
-        });
-        conn.query(soqlQuery, function(err, result) {
-            if (err) {
-                res.status(500).send(err);
-                return;
+    runSoql: (conn, soqlQuery) => {
+        conn.query(soqlQuery, (error, result) => {
+            if (error) {
+                throw new Error(error);
             }
-            res.json(result.records);
+            return result.records;
         });
     },
 
     /**
-     *  Gets Conference Session records from Salesforce
-     *  @returns {Array}
+     * Gets Conference Session records from Salesforce
+     * @param {Object} req - server request
+     * @param {Object} res - server response
      */
     getConferenceSessionDetails: (req, res) => {
         const session = authService.getSession(req, res);
-        if (session == null) return;
-
-        let soqlQuery =
-            'SELECT Id, Name, Room__c, Description__c, Date_and_Time__c, (select Speaker__r.First_Name__c, Speaker__r.Last_Name__c, Speaker__r.Bio__c, Speaker__r.Email__c from Session_Speakers__r) FROM Session__c';
-        if (req.params.conferencesessionid) {
-            soqlQuery += ` where Id = '${req.params.conferencesessionid}' `;
+        if (session === null) {
+            return;
         }
 
-        module.exports.runSoql(req, res, soqlQuery);
+        const conn = new jsforce.Connection({
+            accessToken: session.sfdcAccessToken,
+            instanceUrl: session.sfdcInstanceUrl
+        });
+
+        // Prepare query
+        let soqlQuery =
+            'SELECT Id, Name, Room__c, Description__c, Date_and_Time__c, (SELECT Speaker__r.First_Name__c, Speaker__r.Last_Name__c, Speaker__r.Bio__c, Speaker__r.Email__c FROM Session_Speakers__r) FROM Session__c';
+        if (req.params.id) {
+            soqlQuery += ` WHERE Id = '${req.params.id}' `;
+        }
+
+        // Execute query and respond with result or error
+        try {
+            const records = module.exports.runSoql(conn, soqlQuery);
+            res.json(records);
+        } catch (error) {
+            res.status(500).send(error);
+        }
     }
 };

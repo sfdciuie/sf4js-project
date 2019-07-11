@@ -61,7 +61,7 @@ module.exports = app => {
     });
 
     // Get Conference-Session Details
-    app.get('/api/conference-sessions/:conferencesessionid?', (req, res) => {
+    app.get('/api/conference-sessions/:id?', (req, res) => {
         integrationService.getConferenceSessionDetails(req, res);
     });
 };
