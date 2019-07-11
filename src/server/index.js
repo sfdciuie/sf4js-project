@@ -7,8 +7,6 @@ const jsforce = require('jsforce');
 const session = require('express-session');
 
 module.exports = app => {
-    
-
     //Retrieve OAuth Information from .env file
     const clientId = process.env.CLIENT_ID;
     const clientSecret = process.env.CLIENT_SECRET;
@@ -22,7 +20,9 @@ module.exports = app => {
     });
 
     if (!(clientId && clientSecret && redirectUri && sessionSecretKey)) {
-        console.error('Cannot start app: missing mandatory configuration. Check your .env file or your environment variables.');
+        console.error(
+            'Cannot start app: missing mandatory configuration. Check your .env file or your environment variables.'
+        );
         process.exit(-1);
     }
 

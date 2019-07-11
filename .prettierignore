@@ -6,3 +6,6 @@ dist/
 
 # Default resources folder
 src/client/resources
+
+# Salesforce DX project
+sfdx-project/
