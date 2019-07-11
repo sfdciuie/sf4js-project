@@ -1,4 +1,4 @@
-var authTools = require('./auth');
+const authService = require('./auth');
 const jsforce = require('jsforce');
 
 module.exports = {
@@ -25,8 +25,8 @@ module.exports = {
      *  @returns {Array}
      */
     getConferenceSessionDetails: (req, res) => {
-        const _session = authTools.getSession(req, res);
-        if (_session == null) return;
+        const session = authService.getSession(req, res);
+        if (session == null) return;
 
         let soqlQuery =
             'SELECT Id, Name, Room__c, Description__c, Date_and_Time__c, (select Speaker__r.First_Name__c, Speaker__r.Last_Name__c, Speaker__r.Bio__c, Speaker__r.Email__c from Session_Speakers__r) FROM Session__c';

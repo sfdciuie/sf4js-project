@@ -3,16 +3,16 @@ const jsforce = require('jsforce');
 module.exports = {
     /**
      *  Attemps to retrieves the server session.
-     *  If there is no session, redirects with HTTP 401 and an error message
+     *  If there is no session, redirects with HTTP 401 and an error message.
      *  @returns {Object}
      */
     getSession: (request, response) => {
-        let _session = request.session;
-        if (typeof _session.sfdcAccessToken === 'undefined') {
+        const { session } = request;
+        if (typeof session.sfdcAccessToken === 'undefined') {
             response.status(401).send('Unauthorized');
             return null;
         }
-        return _session;
+        return session;
     },
 
     /**
@@ -35,7 +35,7 @@ module.exports = {
             return;
         }
         const conn = new jsforce.Connection({ oauth2: oauth2 });
-        const code = req.query.code;
+        const { code } = req.query;
         conn.authorize(code, (err, userInfo) => {
             if (err) {
                 res.status(500).send(err);
@@ -52,8 +52,8 @@ module.exports = {
      *  @returns {Object}
      */
     getLoggedInUserDetails: (req, res) => {
-        const _session = module.exports.getSession(req, res);
-        if (_session == null) return;
+        const session = module.exports.getSession(req, res);
+        if (session == null) return;
 
         const conn = new jsforce.Connection({
             instanceUrl: req.session.sfdcInstanceUrl,
@@ -73,8 +73,8 @@ module.exports = {
      *  @returns {URL}
      */
     doLogout: (req, res, oauth2) => {
-        const _session = module.exports.getSession(req, res);
-        if (_session == null) return;
+        const session = module.exports.getSession(req, res);
+        if (session == null) return;
 
         oauth2.revokeToken(req.session.sfdcAccessToken, err => {
             if (err) {
