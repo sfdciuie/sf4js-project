@@ -1,4 +1,4 @@
 import { buildCustomElementConstructor } from 'lwc';
-import MyApp from 'ui/app';
+import App from 'ui/app';
 
-customElements.define('ui-app', buildCustomElementConstructor(MyApp));
+customElements.define('ui-app', buildCustomElementConstructor(App));
