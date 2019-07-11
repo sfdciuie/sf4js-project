@@ -1,7 +1,6 @@
 const jsforce = require('jsforce');
 
 module.exports = {
-
     /**
      *  Attemps to retrieves the server session.
      *  If there is no session, redirects with HTTP 401 and an error message
@@ -60,7 +59,7 @@ module.exports = {
             instanceUrl: req.session.sfdcInstanceUrl,
             accessToken: req.session.sfdcAccessToken
         });
-        conn.identity( (err, data) => {
+        conn.identity((err, data) => {
             if (err) {
                 res.status(500).send(err);
                 return;
@@ -77,19 +76,19 @@ module.exports = {
         const _session = module.exports.getSession(req, res);
         if (_session == null) return;
 
-        oauth2.revokeToken(req.session.sfdcAccessToken, (err) => {
+        oauth2.revokeToken(req.session.sfdcAccessToken, err => {
             if (err) {
                 res.status(500).json(err);
             }
         });
-        req.session.destroy((error) => {
+        req.session.destroy(error => {
             if (error) {
                 res.status(500).send(
                     'Force.com session destruction error: ' +
-                    JSON.stringify(error)
+                        JSON.stringify(error)
                 );
             }
         });
         res.redirect('/index.html');
     }
-}
+};

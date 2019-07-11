@@ -1,7 +1,7 @@
 /* eslint-disable no-console */
 
-var authTools = require("./auth");
-var integrationTools = require("./integration");
+var authTools = require('./auth');
+var integrationTools = require('./integration');
 
 module.exports = app => {
     require('dotenv').config();
@@ -21,7 +21,7 @@ module.exports = app => {
         redirectUri
     });
 
-    if (!(clientId && clientSecret && redirectUri && sessionSecretKey) ){
+    if (!(clientId && clientSecret && redirectUri && sessionSecretKey)) {
         throw new Error('Configuration Params missing');
     }
 
@@ -35,7 +35,6 @@ module.exports = app => {
         })
     );
 
-    
     //Login to Salesforce
     app.get('/oauth2/login', (req, res) => {
         authTools.redirectToAuthUrl(res, oauth2);
@@ -57,7 +56,7 @@ module.exports = app => {
     });
 
     //Get Conference-Session Details
-    app.get('/api/conference-sessions/:conferencesessionid?', (req,res) => {
+    app.get('/api/conference-sessions/:conferencesessionid?', (req, res) => {
         integrationTools.getConferenceSessionDetails(req, res);
     });
 };

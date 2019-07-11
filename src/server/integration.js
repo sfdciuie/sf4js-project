@@ -1,4 +1,4 @@
-var authTools = require("./auth");
+var authTools = require('./auth');
 const jsforce = require('jsforce');
 
 module.exports = {
@@ -11,7 +11,7 @@ module.exports = {
             instanceUrl: req.session.sfdcInstanceUrl,
             accessToken: req.session.sfdcAccessToken
         });
-        conn.query(soqlQuery, function (err, result) {
+        conn.query(soqlQuery, function(err, result) {
             if (err) {
                 res.status(500).send(err);
                 return;
@@ -36,4 +36,4 @@ module.exports = {
 
         module.exports.runSoql(req, res, soqlQuery);
     }
-}
+};
