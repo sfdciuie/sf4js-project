@@ -7,8 +7,8 @@ import {
 } from 'ui/navigationUtil';
 
 export default class App extends LightningElement {
-    @track isUserLoggedIn = true;
-    @track view = { name: SESSION_VIEW, params: { sessionId: '1' } };
+    @track isUserLoggedIn = false;
+    @track view = { name: LOGIN_VIEW };
 
     handleLogin() {
         // TODO: trigger OAuth login flow here

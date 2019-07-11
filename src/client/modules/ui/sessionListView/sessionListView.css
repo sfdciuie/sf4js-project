@@ -71,6 +71,18 @@ button.brand:hover {
 
 .session:hover {
     border-color: #ff8a00;
-    color: #000000;
     background-color: #f9f9f9;
+}
+
+.session .time {
+    color: #ff8a00;
+    padding-right: 0.25rem;
+}
+
+.session .title {
+    padding-left: 0.25rem;
+}
+
+.session:hover .title {
+    color: #000000;
 }

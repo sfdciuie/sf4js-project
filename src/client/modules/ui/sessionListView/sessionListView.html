@@ -10,7 +10,9 @@
                     class="session"
                     onclick={handleSessionClick}
                 >
-                    {session.Name}
+                    <span class="time">{session.Date_and_Time__c}</span>
+                    -
+                    <span class="title">{session.Name}</span>
                 </button>
             </template>
         </div>
