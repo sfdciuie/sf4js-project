@@ -11,9 +11,9 @@ The source files are located in the [`src`](./src) folder. All web components ar
 ## Configuration
 1. Create a .env file in the root folder of your project
 2. Add the below 4 entries to the file.
-    - *CLIENT_ID*: <Client Id from the Connected App created in Salesforce>
-    - *CLIENT_SECRET*: <Client Secret from the Connected App created in Salesforce>
-    - *REDIRECT_URL*: <URL to which the user gets redirected to, once they finish the Salesforce authorization process. Must be one of the URLs configured in the Connected App>
-    - *SESSION_SECRET_KEY*: <Key used for signing and/or encrypting cookies set by the application to maintain session state>
+    - **CLIENT_ID**: Client Id from the Connected App created in Salesforce
+    - **CLIENT_SECRET**: Client Secret from the Connected App created in Salesforce
+    - **REDIRECT_URL**: URL to which the user gets redirected to, once they finish the Salesforce authorization process. Must be one of the URLs configured in the Connected App
+    - **SESSION_SECRET_KEY**: Key used for signing and/or encrypting cookies set by the application to maintain session state
 
 Find more information on the main repo on [GitHub](https://github.com/muenzpraeger/lwc-create-app).
