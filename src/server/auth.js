@@ -1,3 +1,4 @@
+/* eslint-disable no-console */
 const jsforce = require('jsforce');
 
 module.exports = {
@@ -43,6 +44,7 @@ module.exports = {
         const { code } = req.query;
         conn.authorize(code, error => {
             if (error) {
+                console.error(error);
                 res.status(500).send(error);
                 return;
             }
@@ -72,6 +74,7 @@ module.exports = {
         });
         conn.identity((error, data) => {
             if (error) {
+                console.error(error);
                 res.status(500).send(error);
                 return;
             }
@@ -93,11 +96,13 @@ module.exports = {
 
         oauth2.revokeToken(session.sfdcAccessToken, error => {
             if (error) {
+                console.error(error);
                 res.status(500).json(error);
             }
         });
         session.destroy(error => {
             if (error) {
+                console.error(error);
                 res.status(500).send(
                     'Force.com session destruction error: ' +
                         JSON.stringify(error)
