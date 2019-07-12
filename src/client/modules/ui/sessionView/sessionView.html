@@ -1,30 +1,32 @@
 <template>
-    <div class="box orange">
-        <div class="box-header">
-            <h2>{session.Name}</h2>
-            <button onclick={handleBack} type="button" class="brand">
-                ◄&nbsp;&nbsp;Back
-            </button>
-        </div>
+    <template if:true={session}>
+        <div class="box orange">
+            <div class="box-header">
+                <h2>{session.Name}</h2>
+                <button onclick={handleBack} type="button" class="brand">
+                    ◄&nbsp;&nbsp;Back
+                </button>
+            </div>
 
-        <!-- Session fields -->
-        <dl>
-            <dt>Date and Time</dt>
-            <dv>{session.Date_and_Time__c}</dv>
-            <dt>Description</dt>
-            <dv>{session.Description__c}</dv>
-            <dt>Room</dt>
-            <dv>{session.Room__c}</dv>
-        </dl>
+            <!-- Session fields -->
+            <dl>
+                <dt>Date and Time</dt>
+                <dv>{session.Date_and_Time__c}</dv>
+                <dt>Description</dt>
+                <dv>{session.Description__c}</dv>
+                <dt>Room</dt>
+                <dv>{session.Room__c}</dv>
+            </dl>
 
-        <h3>Speakers</h3>
-        <div class="speaker-list">
-            <template for:each={speakers} for:item="speaker">
-                <ui-speaker-card
-                    key={speaker.Id}
-                    speaker={speaker}
-                ></ui-speaker-card>
-            </template>
+            <h3>Speakers</h3>
+            <div class="speaker-list">
+                <template for:each={speakers} for:item="speaker">
+                    <ui-speaker-card
+                        key={speaker.Speaker__r.Id}
+                        speaker={speaker}
+                    ></ui-speaker-card>
+                </template>
+            </div>
         </div>
-    </div>
+    </template>
 </template>

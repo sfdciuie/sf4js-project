@@ -19,7 +19,7 @@ module.exports = {
 
     /**
      * Redirects user to Salesforce login page for authorization
-     * @param {Object} req - server request
+     * @param {Object} res - server response
      * @param {jsforce.OAuth2} oauth2 - OAuth2 configuration
      */
     redirectToAuthUrl: (res, oauth2) => {

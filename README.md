@@ -33,8 +33,8 @@ SESSION_SECRET_KEY=''
 
 Update the values of the following properties:
 
--   **CLIENT_ID**: Client Id from the Connected App created in Salesforce
--   **CLIENT_SECRET**: Client Secret from the Connected App created in Salesforce
+-   **CLIENT_ID**: Consumer Key from the Connected App created in Salesforce
+-   **CLIENT_SECRET**: Consumer Secret from the Connected App created in Salesforce
 -   **SESSION_SECRET_KEY**: Key used for signing and/or encrypting cookies set by the application to maintain session state
 
 ## Node App Startup
