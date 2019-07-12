@@ -5,7 +5,7 @@ import {
     SESSION_LIST_VIEW,
     SESSION_VIEW
 } from 'ui/navigationUtil';
-import { getLoggedInUser } from 'client/authProvider';
+import { getLoggedInUser, logOut } from 'client/authProvider';
 
 export default class App extends LightningElement {
     @track loggedUser = undefined;
@@ -24,7 +24,8 @@ export default class App extends LightningElement {
     }
 
     handleLogout() {
-        // TODO: trigger OAuth logout flow here
+        // Log out and don't wait for server response
+        logOut();
         this.view = { name: LOGIN_VIEW };
         this.loggedUser = undefined;
     }

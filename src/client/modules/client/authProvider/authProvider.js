@@ -3,7 +3,6 @@
  * @returns {Promise} Promise holding user info or an empty object if user is not logged in
  */
 export function getLoggedInUser() {
-    //return fetch('/oauth2/whoami');
     return new Promise((resolve, reject) => {
         fetch('/oauth2/whoami')
             .then(response => {
@@ -17,4 +16,12 @@ export function getLoggedInUser() {
                 reject(error);
             });
     });
+}
+
+/**
+ * Logs out the user
+ * @returns {Promise}
+ */
+export function logOut() {
+    return fetch('/oauth2/logout');
 }
