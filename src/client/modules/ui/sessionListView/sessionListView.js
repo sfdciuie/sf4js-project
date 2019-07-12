@@ -6,15 +6,17 @@ export default class SessionListView extends LightningElement {
     @track sessions;
     @track error;
 
-    constructor(){
+    constructor() {
         super();
-        getSessions().then((data) => {
-            this.sessions = data;
-        }).catch((err) => {
-            this.error = err;
-        });
+        getSessions()
+            .then(data => {
+                this.sessions = data;
+            })
+            .catch(err => {
+                this.error = err;
+            });
     }
-    
+
     handleSessionClick(event) {
         const { sessionId } = event.target.dataset;
         navigate(this, SESSION_VIEW, { sessionId });

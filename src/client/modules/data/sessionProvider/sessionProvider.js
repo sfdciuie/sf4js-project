@@ -7,23 +7,23 @@ import { sessions } from 'data/sessions';
 export function getSessions() {
     return new Promise(function(resolve, reject) {
         fetch('/api/conference-sessions/')
-        .then(response => {
-            // fetch isn't throwing an error if the request fails.
-            // Therefore we have to check the ok property.
-            if (!response.ok) {
-                reject(response);
-            }
-            return response.json();
-        })
-        .then(jsonResponse => {
-            resolve(jsonResponse);
-        })
-        .catch(error => {
-            reject(error);
-        }); 
+            .then(response => {
+                // fetch isn't throwing an error if the request fails.
+                // Therefore we have to check the ok property.
+                if (!response.ok) {
+                    reject(response);
+                }
+                return response.json();
+            })
+            .then(jsonResponse => {
+                resolve(jsonResponse);
+            })
+            .catch(error => {
+                reject(error);
+            });
     });
-    
-    //Comment above code and uncomment below line to return static data  
+
+    //Comment above code and uncomment below line to return static data
     //return sessions;
 }
 
@@ -48,23 +48,22 @@ export function findSession(searchKey) {
  * @returns {Promise} Promise holding a session record
  */
 export function getSession(sessionId) {
-   
     return new Promise(function(resolve, reject) {
         fetch(`/api/conference-sessions/${sessionId}`)
-        .then(response => {
-            // fetch isn't throwing an error if the request fails.
-            // Therefore we have to check the ok property.
-            if (!response.ok) {
-                reject(response);
-            }
-            return response.json();
-        })
-        .then(jsonResponse => {
-            resolve(jsonResponse);
-        })
-        .catch(error => {
-            reject(error);
-        }); 
+            .then(response => {
+                // fetch isn't throwing an error if the request fails.
+                // Therefore we have to check the ok property.
+                if (!response.ok) {
+                    reject(response);
+                }
+                return response.json();
+            })
+            .then(jsonResponse => {
+                resolve(jsonResponse);
+            })
+            .catch(error => {
+                reject(error);
+            });
     });
     /* const index = sessions.findIndex(session => session.Id === sessionId);
     if (index === -1) {

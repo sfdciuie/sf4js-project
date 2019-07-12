@@ -40,15 +40,15 @@ module.exports = {
         if (req.params.id) {
             soqlQuery += ` WHERE Id = '${req.params.id}' `;
         }
-        
+
         // Execute query and respond with result or error
-        module.exports.runSoql(conn, soqlQuery)
-        .then(records => {
-            res.json(records);
-        })
-        .catch(error => {
-            res.status(500).send(error);
-        });
-        
+        module.exports
+            .runSoql(conn, soqlQuery)
+            .then(records => {
+                res.json(records);
+            })
+            .catch(error => {
+                res.status(500).send(error);
+            });
     }
 };

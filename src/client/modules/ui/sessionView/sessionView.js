@@ -9,14 +9,16 @@ export default class SessionView extends LightningElement {
     @track error;
 
     set sessionId(sessionId) {
-        getSession(sessionId).then(data => {
-            if(data.length > 0){
-                this.session = data[0];
-            }
-            this.speakers = this.session.Session_Speakers__r.records;
-        }).catch((err) => {
-            this.error = err;
-        });
+        getSession(sessionId)
+            .then(data => {
+                if (data.length > 0) {
+                    this.session = data[0];
+                }
+                this.speakers = this.session.Session_Speakers__r.records;
+            })
+            .catch(err => {
+                this.error = err;
+            });
         //this.session = getSession(sessionId);
         //this.speakers = getSessionSpeakers(sessionId);
     }
