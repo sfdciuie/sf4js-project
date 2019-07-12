@@ -2,18 +2,23 @@
     <div class="box orange">
         <h2>Sessions</h2>
         <div class="list-wrapper">
-            <template for:each={sessions} for:item="session">
-                <button
-                    key={session.Id}
-                    data-session-id={session.Id}
-                    type="button"
-                    class="session"
-                    onclick={handleSessionClick}
-                >
-                    <span class="time">{session.Date_and_Time__c}</span>
-                    -
-                    <span class="title">{session.Name}</span>
-                </button>
+            <template if:true={sessions}>
+                <template for:each={sessions} for:item="session">
+                    <button
+                        key={session.Id}
+                        data-session-id={session.Id}
+                        type="button"
+                        class="session"
+                        onclick={handleSessionClick}
+                    >
+                        <span class="time">{session.Date_and_Time__c}</span>
+                        -
+                        <span class="title">{session.Name}</span>
+                    </button>
+                </template>
+            </template>
+            <template if:true={error}>
+                {error}
             </template>
         </div>
     </div>

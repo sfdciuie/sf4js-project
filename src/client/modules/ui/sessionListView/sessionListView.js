@@ -3,7 +3,19 @@ import { getSessions } from 'data/sessionProvider';
 import { navigate, SESSION_VIEW } from 'ui/navigationUtil';
 
 export default class SessionListView extends LightningElement {
-    @track sessions = getSessions();
+    @track sessions;
+    @track error;
+
+    constructor() {
+        super();
+        getSessions()
+            .then(data => {
+                this.sessions = data;
+            })
+            .catch(err => {
+                this.error = err;
+            });
+    }
 
     handleSessionClick(event) {
         const { sessionId } = event.target.dataset;

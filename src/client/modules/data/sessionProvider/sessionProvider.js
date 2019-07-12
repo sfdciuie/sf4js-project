@@ -2,10 +2,29 @@ import { sessions } from 'data/sessions';
 
 /**
  * Gets all sessions
- * @returns {Array}
+ * @returns {Promise<Array>} Promise holding an Arrray of records
  */
 export function getSessions() {
-    return sessions;
+    return new Promise(function(resolve, reject) {
+        fetch('/api/conference-sessions/')
+            .then(response => {
+                // fetch isn't throwing an error if the request fails.
+                // Therefore we have to check the ok property.
+                if (!response.ok) {
+                    reject(response);
+                }
+                return response.json();
+            })
+            .then(jsonResponse => {
+                resolve(jsonResponse);
+            })
+            .catch(error => {
+                reject(error);
+            });
+    });
+
+    //Comment above code and uncomment below line to return static data
+    //return sessions;
 }
 
 /**
@@ -26,12 +45,29 @@ export function findSession(searchKey) {
 /**
  * Gets a session record
  * @param {string} sessionId
- * @returns {Object}
+ * @returns {Promise} Promise holding a session record
  */
 export function getSession(sessionId) {
-    const index = sessions.findIndex(session => session.Id === sessionId);
+    return new Promise(function(resolve, reject) {
+        fetch(`/api/conference-sessions/${sessionId}`)
+            .then(response => {
+                // fetch isn't throwing an error if the request fails.
+                // Therefore we have to check the ok property.
+                if (!response.ok) {
+                    reject(response);
+                }
+                return response.json();
+            })
+            .then(jsonResponse => {
+                resolve(jsonResponse);
+            })
+            .catch(error => {
+                reject(error);
+            });
+    });
+    /* const index = sessions.findIndex(session => session.Id === sessionId);
     if (index === -1) {
         throw new Error(`No session found with Id ${sessionId}`);
     }
-    return sessions[index];
+    return sessions[index];*/
 }
