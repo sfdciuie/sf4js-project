@@ -71,3 +71,7 @@ button.brand:hover {
     background-image: none;
     border-color: #ff8a00;
 }
+
+.user-display-name {
+    margin-right: 1rem;
+}

@@ -5,19 +5,15 @@ import { sessions } from './sessions';
  * @returns {Promise<Array>} Promise holding an Arrray of records
  */
 export function getSessions() {
-    return new Promise(function(resolve, reject) {
+    return new Promise((resolve, reject) => {
         fetch('/api/conference-sessions/')
             .then(response => {
-                // fetch isn't throwing an error if the request fails.
-                // Therefore we have to check the ok property.
                 if (!response.ok) {
                     reject(response);
                 }
                 return response.json();
             })
-            .then(jsonResponse => {
-                resolve(jsonResponse);
-            })
+            .then(jsonResponse => resolve(jsonResponse))
             .catch(error => {
                 reject(error);
             });
@@ -48,19 +44,15 @@ export function findSession(searchKey) {
  * @returns {Promise} Promise holding a session record
  */
 export function getSession(sessionId) {
-    return new Promise(function(resolve, reject) {
+    return new Promise((resolve, reject) => {
         fetch(`/api/conference-sessions/${sessionId}`)
             .then(response => {
-                // fetch isn't throwing an error if the request fails.
-                // Therefore we have to check the ok property.
                 if (!response.ok) {
                     reject(response);
                 }
                 return response.json();
             })
-            .then(jsonResponse => {
-                resolve(jsonResponse);
-            })
+            .then(jsonResponse => resolve(jsonResponse))
             .catch(error => {
                 reject(error);
             });

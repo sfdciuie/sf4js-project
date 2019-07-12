@@ -6,7 +6,10 @@
             </h2>
 
             <div class="actions">
-                <template if:true={isUserLoggedIn}>
+                <template if:true={loggedUser}>
+                    <span class="user-display-name"
+                        >{loggedUser.display_name}</span
+                    >
                     <button type="button" class="brand" onclick={handleLogout}>
                         Log Out
                     </button>

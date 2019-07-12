@@ -56,14 +56,16 @@ module.exports = {
      * Gets logged in user's details
      * @param {Object} req - server request
      * @param {Object} res - server response
-     * @returns {Object} user info
+     * @returns {Object} user info or an empty object if user is not logged in
      */
     getLoggedInUserDetails: (req, res) => {
-        const session = module.exports.getSession(req, res);
-        if (session === null) {
+        // Check for existing session
+        const { session } = req;
+        if (session.sfdcAccessToken === undefined) {
+            res.status(200).send({});
             return;
         }
-
+        // Connect to Salesforce and fetch user info
         const conn = new jsforce.Connection({
             accessToken: session.sfdcAccessToken,
             instanceUrl: session.sfdcInstanceUrl
