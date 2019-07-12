@@ -18,9 +18,9 @@
 
 4. Copy the **Consumer Key** and **Consumer Secret** values for the Node app configuration.
 
-### Node App Configuration
+## Node App Configuration
 
-## Configuration
+### Configuration
 
 Create a `.env` file in the root folder of your project with this content:
 
@@ -38,7 +38,7 @@ Update the values of the following properties:
 -   **SFDC_CLIENT_SECRET**: Consumer Secret from the Connected App created in Salesforce
 -   **NODE_SESSION_SECRET_KEY**: Key used for signing and/or encrypting cookies set by the application to maintain session state
 
-## Node App Startup
+### Node App Startup
 
 1. Build the app with `npm run build`
 2. Start the app with `npm run serve`
