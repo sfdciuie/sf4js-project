@@ -1,4 +1,4 @@
-import { sessions } from 'data/sessions';
+import { sessions } from './sessions';
 
 /**
  * Gets all sessions
