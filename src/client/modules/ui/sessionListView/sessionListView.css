@@ -90,3 +90,21 @@ button.brand:hover {
 .session:hover .title {
     color: #000000;
 }
+
+.list-filters {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    margin-bottom: 1rem;
+}
+
+label {
+    margin-right: 1rem;
+    font-weight: bold;
+}
+
+input {
+    padding: 0.25rem;
+    border-radius: 0.25rem;
+    border-color: #ff8a00;
+}

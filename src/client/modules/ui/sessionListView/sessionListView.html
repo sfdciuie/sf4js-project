@@ -1,9 +1,19 @@
 <template>
     <div class="box orange">
         <h2>Sessions</h2>
+        <div class="list-filters">
+            <label for="session-filter">Filter by Title</label>
+            <input
+                type="text"
+                id="session-filter"
+                placeholder="Search sessions"
+                value={sessionFilter}
+                oninput={handleSessionFilterInput}
+            />
+        </div>
         <div class="list-wrapper">
-            <template if:true={sessions}>
-                <template for:each={sessions} for:item="session">
+            <template if:true={filteredSessions}>
+                <template for:each={filteredSessions} for:item="session">
                     <button
                         key={session.Id}
                         data-session-id={session.Id}

@@ -36,10 +36,16 @@ module.exports = {
         });
 
         // Prepare query
-        let soqlQuery =
-            'SELECT Id, Name, Room__c, Description__c, Date_and_Time__c, (SELECT Speaker__r.Id, Speaker__r.First_Name__c, Speaker__r.Last_Name__c, Speaker__r.Bio__c, Speaker__r.Email__c FROM Session_Speakers__r) FROM Session__c';
+        let soqlQuery;
         if (req.params.id) {
-            soqlQuery += ` WHERE Id = '${req.params.id}' `;
+            // Retrieve details of a specific session with a given id
+            soqlQuery = `SELECT Id, Name, Room__c, Description__c, Date_and_Time__c, 
+                (SELECT Speaker__r.Id, Speaker__r.First_Name__c, Speaker__r.Last_Name__c, Speaker__r.Bio__c, Speaker__r.Email__c FROM Session_Speakers__r) 
+                FROM Session__c WHERE Id = '${req.params.id}'`;
+        } else {
+            // Retrieve all sessions
+            // In production, this should be paginated
+            soqlQuery = 'SELECT Id, Name, Date_and_Time__c FROM Session__c';
         }
 
         // Execute query and respond with result or error
