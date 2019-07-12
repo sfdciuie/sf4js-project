@@ -5,21 +5,29 @@ import {
     SESSION_LIST_VIEW,
     SESSION_VIEW
 } from 'ui/navigationUtil';
+import { getLoggedInUser, logOut } from 'client/authProvider';
 
 export default class App extends LightningElement {
-    @track isUserLoggedIn = false;
+    @track loggedUser = undefined;
     @track view = { name: LOGIN_VIEW };
 
-    handleLogin() {
-        // TODO: trigger OAuth login flow here
-        this.view = { name: SESSION_LIST_VIEW };
-        this.isUserLoggedIn = true;
+    connectedCallback() {
+        getLoggedInUser().then(response => {
+            if (response.user_id === undefined) {
+                this.loggedUser = undefined;
+                this.view = { name: LOGIN_VIEW };
+            } else {
+                this.loggedUser = response;
+                this.view = { name: SESSION_LIST_VIEW };
+            }
+        });
     }
 
     handleLogout() {
-        // TODO: trigger OAuth logout flow here
+        // Log out and don't wait for server response
+        logOut();
         this.view = { name: LOGIN_VIEW };
-        this.isUserLoggedIn = false;
+        this.loggedUser = undefined;
     }
 
     handleNavigate(event) {

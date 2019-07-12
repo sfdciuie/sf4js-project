@@ -1,4 +1,4 @@
-import { speakers } from 'data/speakers';
+import { speakers } from './speakers';
 
 /**
  * Gets all speakers

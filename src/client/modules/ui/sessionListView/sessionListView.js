@@ -1,5 +1,5 @@
 import { LightningElement, track } from 'lwc';
-import { getSessions } from 'data/sessionProvider';
+import { getSessions } from 'client/sessionProvider';
 import { navigate, SESSION_VIEW } from 'ui/navigationUtil';
 
 export default class SessionListView extends LightningElement {

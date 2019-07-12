@@ -1,3 +1,4 @@
+/* eslint-disable no-console */
 const authService = require('./auth');
 const jsforce = require('jsforce');
 
@@ -48,6 +49,7 @@ module.exports = {
                 res.json(records);
             })
             .catch(error => {
+                console.error(error);
                 res.status(500).send(error);
             });
     }

@@ -1,6 +1,6 @@
 import { LightningElement, track, api } from 'lwc';
-import { getSession } from 'data/sessionProvider';
-//import { getSessionSpeakers } from 'data/speakerProvider';
+import { getSession } from 'client/sessionProvider';
+//import { getSessionSpeakers } from 'client/speakerProvider';
 import { navigate, SESSION_LIST_VIEW } from 'ui/navigationUtil';
 
 export default class SessionView extends LightningElement {

@@ -25,17 +25,18 @@
 Create a `.env` file in the root folder of your project with this content:
 
 ```
-CLIENT_ID=''
-CLIENT_SECRET=''
-REDIRECT_URL='http://localhost:3002/oauth2/callback'
-SESSION_SECRET_KEY=''
+SFDC_LOGIN_DOMAIN='https://test.salesforce.com/'
+SFDC_CLIENT_ID=''
+SFDC_CLIENT_SECRET=''
+SFDC_CALLBACK_URL='http://localhost:3002/oauth2/callback'
+NODE_SESSION_SECRET_KEY=''
 ```
 
 Update the values of the following properties:
 
--   **CLIENT_ID**: Consumer Key from the Connected App created in Salesforce
--   **CLIENT_SECRET**: Consumer Secret from the Connected App created in Salesforce
--   **SESSION_SECRET_KEY**: Key used for signing and/or encrypting cookies set by the application to maintain session state
+-   **SFDC_CLIENT_ID**: Consumer Key from the Connected App created in Salesforce
+-   **SFDC_CLIENT_SECRET**: Consumer Secret from the Connected App created in Salesforce
+-   **NODE_SESSION_SECRET_KEY**: Key used for signing and/or encrypting cookies set by the application to maintain session state
 
 ## Node App Startup
 

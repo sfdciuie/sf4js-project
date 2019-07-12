@@ -39,7 +39,10 @@ h2 {
     color: #212529;
 }
 
-button {
+button,
+a.button {
+    text-decoration: none;
+    display: inline-block;
     font-weight: 600;
     text-align: center;
     vertical-align: middle;
@@ -53,7 +56,8 @@ button {
         border-color 0.15s ease-in-out, box-shadow 0.15s ease-in-out;
 }
 
-button > * {
+button > *,
+a.button > * {
     pointer-events: none;
 }
 
@@ -61,14 +65,16 @@ button:not(:disabled) {
     cursor: pointer;
 }
 
-button.brand {
+button.brand,
+a.button.brand {
     color: #fff;
     background-color: #da1b60;
     background-image: linear-gradient(to right, #ff8a00, #da1b60);
     border-color: #da1b60;
 }
 
-button.brand:hover {
+button.brand:hover,
+a.button.brand:hover {
     color: #fff;
     background-color: #da1b60;
     background-image: none;

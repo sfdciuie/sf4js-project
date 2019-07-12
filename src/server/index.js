@@ -10,13 +10,22 @@ require('dotenv').config();
 
 module.exports = app => {
     // Retrieve config
-    const clientId = process.env.CLIENT_ID;
-    const clientSecret = process.env.CLIENT_SECRET;
-    const redirectUri = process.env.REDIRECT_URL;
-    const sessionSecretKey = process.env.SESSION_SECRET_KEY;
+    const loginUrl = process.env.SFDC_LOGIN_DOMAIN;
+    const clientId = process.env.SFDC_CLIENT_ID;
+    const clientSecret = process.env.SFDC_CLIENT_SECRET;
+    const redirectUri = process.env.SFDC_CALLBACK_URL;
+    const sessionSecretKey = process.env.NODE_SESSION_SECRET_KEY;
 
     // Check config
-    if (!(clientId && clientSecret && redirectUri && sessionSecretKey)) {
+    if (
+        !(
+            loginUrl &&
+            clientId &&
+            clientSecret &&
+            redirectUri &&
+            sessionSecretKey
+        )
+    ) {
         console.error(
             'Cannot start app: missing mandatory configuration. Check your .env file or your environment variables.'
         );
@@ -25,6 +34,7 @@ module.exports = app => {
 
     // Initialize OAuth2 config
     const oauth2 = new jsforce.OAuth2({
+        loginUrl,
         clientId,
         clientSecret,
         redirectUri
