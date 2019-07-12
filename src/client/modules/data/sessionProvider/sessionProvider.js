@@ -2,10 +2,9 @@ import { sessions } from 'data/sessions';
 
 /**
  * Gets all sessions
- * @returns {Promise}
+ * @returns {Promise<Array>} Promise holding an Arrray of records
  */
 export function getSessions() {
-    
     return new Promise(function(resolve, reject) {
         fetch('/api/conference-sessions/')
         .then(response => {
@@ -46,12 +45,12 @@ export function findSession(searchKey) {
 /**
  * Gets a session record
  * @param {string} sessionId
- * @returns {Object}
+ * @returns {Promise} Promise holding a session record
  */
 export function getSession(sessionId) {
    
     return new Promise(function(resolve, reject) {
-        fetch('/api/conference-sessions/'+sessionId)
+        fetch(`/api/conference-sessions/${sessionId}`)
         .then(response => {
             // fetch isn't throwing an error if the request fails.
             // Therefore we have to check the ok property.

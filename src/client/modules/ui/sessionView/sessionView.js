@@ -9,7 +9,7 @@ export default class SessionView extends LightningElement {
     @track error;
 
     set sessionId(sessionId) {
-        getSession(sessionId).then((data) => {
+        getSession(sessionId).then(data => {
             if(data.length > 0){
                 this.session = data[0];
             }

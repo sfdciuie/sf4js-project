@@ -6,7 +6,7 @@ module.exports = {
      * Runs an SOQL query on Salesforce
      * @param {jsforce.Connection} conn - jsforce Connection
      * @param {string} soqlQuery - SOQL query
-     * @returns {Array} Array of records returned by SOQL query
+     * @returns {Promise<Array>} Promise holding an Array of records returned by SOQL query
      */
     runSoql: (conn, soqlQuery) => {
         return new Promise((resolve, reject) => {
@@ -42,12 +42,11 @@ module.exports = {
         }
         
         // Execute query and respond with result or error
-       
         module.exports.runSoql(conn, soqlQuery)
-        .then((records) => {
+        .then(records => {
             res.json(records);
         })
-        .catch((error) => {
+        .catch(error => {
             res.status(500).send(error);
         });
         
