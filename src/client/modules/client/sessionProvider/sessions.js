@@ -5,7 +5,7 @@ export const sessions = [
         Date_and_Time__c: '2020-12-07 10:00:00',
         Room__c: 'Keynote room',
         Description__c:
-            "We're please to present our opening keynote on the meaning of life."
+            "We're pleased to present our opening keynote on the meaning of life."
     },
     {
         Id: '2',
@@ -24,7 +24,7 @@ export const sessions = [
     },
     {
         Id: '4',
-        Name: 'A Short Refresher on Cord Theory Presented in latin',
+        Name: 'A Short Refresher on Cord Theory Presented in Latin',
         Date_and_Time__c: '2020-12-07 11:30:00',
         Room__c: 'Theather',
         Description__c: 'A short refresher on cord theory presented in latin.'

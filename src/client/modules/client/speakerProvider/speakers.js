@@ -18,8 +18,7 @@ export const speakers = [
         Id: '3',
         First_Name__c: 'Meghan',
         Last_Name__c: 'Gerald',
-        Bio__c:
-            'Meghan Gerald is tea maker who enjoys painting and yoga.',
+        Bio__c: 'Meghan Gerald is tea maker who enjoys painting and yoga.',
         Email__c: 'meghan.gerald@trailhead.com'
     },
     {
