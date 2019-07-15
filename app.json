@@ -22,7 +22,7 @@
         },
         "SALESFORCE_CALLBACK_URL": {
             "description": "Callback URL used by your Salesforce Connected App",
-            "value": "https://localhost/oauth2/callback",
+            "value": "https://INSERT_YOUR_DOMAIN/oauth2/callback",
             "required": true
         },
         "NODE_SESSION_SECRET_KEY": {
