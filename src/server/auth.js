@@ -2,7 +2,7 @@ const jsforce = require('jsforce');
 
 module.exports = {
     /**
-     * Attemps to retrieves the server session.
+     * Attempts to retrieve the server session.
      * If there is no session, redirects with HTTP 401 and an error message.
      * @param {Object} req - server request
      * @param {Object} res - server response
