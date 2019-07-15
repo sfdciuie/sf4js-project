@@ -19,7 +19,7 @@ export function getLoggedInUser() {
 }
 
 /**
- * Logs out the user
+ * Logs the user out
  * @returns {Promise}
  */
 export function logOut() {

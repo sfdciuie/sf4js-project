@@ -10,10 +10,10 @@ require('dotenv').config();
 
 module.exports = app => {
     // Retrieve config
-    const loginUrl = process.env.SFDC_LOGIN_DOMAIN;
-    const clientId = process.env.SFDC_CLIENT_ID;
-    const clientSecret = process.env.SFDC_CLIENT_SECRET;
-    const redirectUri = process.env.SFDC_CALLBACK_URL;
+    const loginUrl = process.env.SALESFORCE_LOGIN_DOMAIN;
+    const clientId = process.env.SALESFORCE_CLIENT_ID;
+    const clientSecret = process.env.SALESFORCE_CLIENT_SECRET;
+    const redirectUri = process.env.SALESFORCE_CALLBACK_URL;
     const sessionSecretKey = process.env.NODE_SESSION_SECRET_KEY;
 
     // Check config

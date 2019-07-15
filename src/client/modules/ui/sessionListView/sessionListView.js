@@ -9,8 +9,7 @@ export default class SessionListView extends LightningElement {
     @track sessionFilter = '';
     @track error;
 
-    constructor() {
-        super();
+    connectedCallback() {
         // Retrieve all sessions
         // In a prod environment, the operation should be paginated
         getSessions()

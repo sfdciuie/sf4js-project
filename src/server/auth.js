@@ -1,9 +1,8 @@
-/* eslint-disable no-console */
 const jsforce = require('jsforce');
 
 module.exports = {
     /**
-     * Attemps to retrieves the server session.
+     * Attempts to retrieve the server session.
      * If there is no session, redirects with HTTP 401 and an error message.
      * @param {Object} req - server request
      * @param {Object} res - server response
@@ -44,18 +43,17 @@ module.exports = {
         const { code } = req.query;
         conn.authorize(code, error => {
             if (error) {
-                console.error(error);
                 res.status(500).send(error);
                 return;
             }
             req.session.sfdcAccessToken = conn.accessToken;
             req.session.sfdcInstanceUrl = conn.instanceUrl;
-            res.redirect('/index.html');
+            res.redirect('/');
         });
     },
 
     /**
-     * Gets logged in user's details
+     * Gets logged in user details
      * @param {Object} req - server request
      * @param {Object} res - server response
      * @returns {Object} user info or an empty object if user is not logged in
@@ -74,7 +72,6 @@ module.exports = {
         });
         conn.identity((error, data) => {
             if (error) {
-                console.error(error);
                 res.status(500).send(error);
                 return;
             }
@@ -96,19 +93,17 @@ module.exports = {
 
         oauth2.revokeToken(session.sfdcAccessToken, error => {
             if (error) {
-                console.error(error);
                 res.status(500).json(error);
             }
         });
         session.destroy(error => {
             if (error) {
-                console.error(error);
                 res.status(500).send(
-                    'Force.com session destruction error: ' +
+                    'Salesforce session destruction error: ' +
                         JSON.stringify(error)
                 );
             }
         });
-        res.redirect('/index.html');
+        res.redirect('/');
     }
 };

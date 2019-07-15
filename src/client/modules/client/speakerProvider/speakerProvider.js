@@ -26,7 +26,7 @@ export function getSessionSpeakers(sessionId) {
 export function getSpeaker(speakerId) {
     const index = speakers.findIndex(speaker => speaker.Id === speakerId);
     if (index === -1) {
-        throw new Error(`No speaker found with Id ${speakerId}`);
+        throw new Error(`No speaker found with id ${speakerId}`);
     }
     return speakers[index];
 }
