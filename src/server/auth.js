@@ -53,7 +53,7 @@ module.exports = {
     },
 
     /**
-     * Gets logged in user's details
+     * Gets logged in user details
      * @param {Object} req - server request
      * @param {Object} res - server response
      * @returns {Object} user info or an empty object if user is not logged in
