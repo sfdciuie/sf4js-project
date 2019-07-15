@@ -11,7 +11,7 @@ export const speakers = [
         First_Name__c: 'Laetitia',
         Last_Name__c: 'Arevik',
         Bio__c:
-            'Laetitia Arevik is a local activist who enjoys reading, painting and working on cars. She has a degree in philosophy, politics and economics.',
+            'Laetitia Arevik is a local activist who enjoys reading, painting and working on cars.',
         Email__c: 'laetitia.arevik@trailhead.com'
     },
     {
@@ -19,7 +19,7 @@ export const speakers = [
         First_Name__c: 'Meghan',
         Last_Name__c: 'Gerald',
         Bio__c:
-            'Meghan Gerald is tea maker who enjoys painting and yoga. She has a post-graduate degree in traditional medicine.',
+            'Meghan Gerald is tea maker who enjoys painting and yoga.',
         Email__c: 'meghan.gerald@trailhead.com'
     },
     {
@@ -27,7 +27,7 @@ export const speakers = [
         First_Name__c: 'Ermenrich',
         Last_Name__c: 'Nalani',
         Bio__c:
-            'Ermenrich Nalani is a scientific research team leader who enjoys horse riding, attending museums and jigsaw puzzles. He has a post-graduate degree in chemistry.',
+            'Ermenrich Nalani is a scientific research team leader who enjoys horse riding, attending museums and jigsaw puzzles.',
         Email__c: 'ermenrich.nalani@trailhead.com'
     }
 ];
