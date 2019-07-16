@@ -1,31 +1,44 @@
-const authService = require('./auth');
 const jsforce = require('jsforce');
 
-module.exports = {
+module.exports = class IntegrationService {
+    /**
+     * Builds the authentication service
+     * @param {winston.Logger} logger
+     * @param {AuthenticationService} authService
+     */
+    constructor(logger, authService) {
+        this.logger = logger;
+        this.authService = authService;
+    }
+
     /**
      * Runs an SOQL query on Salesforce
      * @param {jsforce.Connection} conn - jsforce Connection
      * @param {string} soqlQuery - SOQL query
      * @returns {Promise<Array>} Promise holding an Array of records returned by SOQL query
      */
-    runSoql: (conn, soqlQuery) => {
+    _runSoql(conn, soqlQuery) {
         return new Promise((resolve, reject) => {
             conn.query(soqlQuery, (error, result) => {
                 if (error) {
+                    this.logger.error(
+                        `Failed to run SOQL query: ${soqlQuery}`,
+                        error
+                    );
                     reject(error);
                 }
                 resolve(result.records);
             });
         });
-    },
+    }
 
     /**
      * Gets Conference Session records from Salesforce
      * @param {Object} req - server request
      * @param {Object} res - server response
      */
-    getConferenceSessionDetails: (req, res) => {
-        const session = authService.getSession(req, res);
+    getConferenceSessionDetails(req, res) {
+        const session = this.authService.getSession(req, res);
         if (session === null) {
             return;
         }
@@ -48,12 +61,15 @@ module.exports = {
         }
 
         // Execute query and respond with result or error
-        module.exports
-            .runSoql(conn, soqlQuery)
+        this._runSoql(conn, soqlQuery)
             .then(records => {
                 res.json(records);
             })
             .catch(error => {
+                this.logger.error(
+                    'Failed to retrieve conference session(s)',
+                    error
+                );
                 res.status(500).send(error);
             });
     }
