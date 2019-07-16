@@ -18,9 +18,19 @@
 
 4. Copy the **Consumer Key** and **Consumer Secret** values for the Node app configuration.
 
-## Node App Configuration
+### Heroku Deploy
 
-### Configuration
+Click on this button and follow the instructions to deploy the app:
+
+<p align="center">
+  <a href="https://heroku.com/deploy">
+    <img src="https://www.herokucdn.com/deploy/button.svg" alt="Deploy">
+  </a>
+<p>
+
+### Local Installation
+
+#### Local app configuration
 
 Create a `.env` file in the root folder of your project with this content:
 
@@ -38,7 +48,7 @@ Update the values of the following properties:
 -   **SALESFORCE_CLIENT_SECRET**: Consumer Secret from the Connected App created in Salesforce
 -   **NODE_SESSION_SECRET_KEY**: Key used for signing and/or encrypting cookies set by the application to maintain session state
 
-### Node App Startup
+#### Local app startup
 
 1. Build the app with `npm run build`
 2. Start the app with `npm run serve`
