@@ -18,12 +18,13 @@
                 <dv>{session.Room__c}</dv>
             </dl>
 
+            <!-- Speaker list -->
             <h3>Speakers</h3>
             <div class="speaker-list">
                 <template for:each={speakers} for:item="speaker">
                     <ui-speaker-card
                         key={speaker.Speaker__r.Id}
-                        speaker={speaker}
+                        speaker={speaker.Speaker__r}
                     ></ui-speaker-card>
                 </template>
             </div>
