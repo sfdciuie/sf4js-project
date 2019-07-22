@@ -18,6 +18,8 @@
 
 4. Copy the **Consumer Key** and **Consumer Secret** values for the Node app configuration.
 
+5. If you are testing the final project (LWC on Platform), edit and activate the custom **Session Record Page** from **Setup > Lightning App Builder**.
+
 ### Heroku Deploy
 
 Click on this button and follow the instructions to deploy the app:
