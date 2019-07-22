@@ -1,0 +1,87 @@
+:host {
+    width: 100%;
+    margin: 0 1rem 1rem 1rem;
+}
+
+@media (min-width: 320px) and (max-width: 480px) {
+    :host {
+        margin: 0 0 1rem 0;
+    }
+}
+
+.box {
+    background-color: #fff;
+    background-clip: border-box;
+    border: 1px solid #dee2e6;
+    border-radius: 0.5rem;
+    margin: auto;
+    padding: 0.75rem 1.5rem;
+}
+.box.red {
+    border-left: 2px solid #da1a60;
+}
+
+.box-header {
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-start;
+}
+
+.box-header button {
+    margin-top: 1.5rem;
+}
+
+h2 {
+    font-size: 1.5rem;
+    margin: 1.5rem 0;
+    color: #da1b60;
+}
+
+.list-wrapper {
+    display: flex;
+    flex-direction: column;
+}
+
+button {
+    font-weight: 600;
+    text-align: center;
+    vertical-align: middle;
+    user-select: none;
+    border: 1px solid transparent;
+    padding: 0.3125rem 1rem;
+    font-size: 1rem;
+    line-height: 1.5;
+    border-radius: 0.25rem;
+    transition: color 0.15s ease-in-out, background-color 0.15s ease-in-out,
+        border-color 0.15s ease-in-out, box-shadow 0.15s ease-in-out;
+}
+
+button > * {
+    pointer-events: none;
+}
+
+button:not(:disabled) {
+    cursor: pointer;
+}
+
+button.brand {
+    color: #fff;
+    background-color: #da1b60;
+    background-image: linear-gradient(to right, #ff8a00, #da1b60);
+    border-color: #da1b60;
+}
+
+button.brand:hover {
+    color: #fff;
+    background-color: #da1b60;
+    background-image: none;
+    border-color: #ff8a00;
+}
+
+dt {
+    margin-top: 1rem;
+    margin-bottom: 0.25rem;
+    font-weight: bold;
+    color: #424242;
+}

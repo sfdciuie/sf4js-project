@@ -1,0 +1,110 @@
+:host {
+    width: 100%;
+    padding: 2rem;
+}
+
+.box {
+    background-color: #fff;
+    background-clip: border-box;
+    border: 1px solid #dee2e6;
+    border-radius: 0.5rem;
+    margin: auto;
+    padding: 0.75rem 1.5rem;
+}
+.box.orange {
+    border-top: 2px solid #ff8a00;
+}
+
+h2 {
+    font-size: 1.5rem;
+    margin: 1.5rem 0;
+    color: #da1b60;
+}
+
+.list-wrapper {
+    display: flex;
+    flex-direction: column;
+}
+
+button {
+    font-weight: 600;
+    text-align: center;
+    vertical-align: middle;
+    user-select: none;
+    border: 1px solid transparent;
+    padding: 0.3125rem 1rem;
+    font-size: 1rem;
+    line-height: 1.5;
+    border-radius: 0.25rem;
+    transition: color 0.15s ease-in-out, background-color 0.15s ease-in-out,
+        border-color 0.15s ease-in-out, box-shadow 0.15s ease-in-out;
+}
+
+button > * {
+    pointer-events: none;
+}
+
+button:not(:disabled) {
+    cursor: pointer;
+}
+
+button.brand {
+    color: #fff;
+    background-color: #da1b60;
+    background-image: linear-gradient(to right, #ff8a00, #da1b60);
+    border-color: #da1b60;
+}
+
+button.brand:hover {
+    color: #fff;
+    background-color: #da1b60;
+    background-image: none;
+    border-color: #ff8a00;
+}
+
+.session {
+    display: block;
+    text-align: left;
+    margin: 0.5rem;
+    padding: 0.5rem;
+    color: #424242;
+    background-color: transparent;
+    border-left: 3px solid #da1b60;
+    border-radius: 0 0.5rem 0.5rem 0;
+}
+
+.session:hover {
+    border-color: #ff8a00;
+    background-color: #f9f9f9;
+}
+
+.session .time {
+    color: #ff8a00;
+    padding-right: 0.25rem;
+}
+
+.session .title {
+    padding-left: 0.25rem;
+}
+
+.session:hover .title {
+    color: #000000;
+}
+
+.list-filters {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    margin-bottom: 1rem;
+}
+
+label {
+    margin-right: 1rem;
+    font-weight: bold;
+}
+
+input {
+    padding: 0.25rem;
+    border-radius: 0.25rem;
+    border-color: #ff8a00;
+}
