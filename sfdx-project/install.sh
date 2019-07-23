@@ -23,6 +23,7 @@ echo "" && \
 
 echo "Assigning permission sets..." && \
 sfdx force:user:permset:assign -n Conference_Management -u $ORG_ALIAS && \
+sfdx force:user:permset:assign -n Conference_Management_Completed -u $ORG_ALIAS && \
 echo "" && \
 
 echo "Importing data..." && \
