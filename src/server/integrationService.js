@@ -57,7 +57,8 @@ module.exports = class IntegrationService {
         } else {
             // Retrieve all sessions
             // In production, this should be paginated
-            soqlQuery = 'SELECT Id, Name, Date_and_Time__c FROM Session__c';
+            soqlQuery =
+                'SELECT Id, Name, Date_and_Time__c FROM Session__c ORDER BY Date_and_Time__c LIMIT 100';
         }
 
         // Execute query and respond with result or error

@@ -7,7 +7,7 @@ public with sharing class SessionController {
     */
     @AuraEnabled(cacheable=true)
     public static List<Session__c> getSessions() {
-        return [SELECT Id, Name, Date_and_Time__c FROM Session__c LIMIT 100];
+        return [SELECT Id, Name, Date_and_Time__c FROM Session__c ORDER BY Date_and_Time__c LIMIT 100];
     }
 
     /**
