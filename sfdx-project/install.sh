@@ -22,13 +22,14 @@ sfdx force:source:push -u $ORG_ALIAS && \
 echo "" && \
 
 echo "Assigning permission sets..." && \
-sfdx force:user:permset:assign -u $ORG_ALIAS -n Conference_Management && \
+sfdx force:user:permset:assign -n Conference_Management -u $ORG_ALIAS && \
 echo "" && \
 
-#echo "Importing data..." && \
-#sfdx force:data:tree:import -u $ORG_ALIAS -p ../data/plan.json && \
+echo "Importing data..." && \
+sfdx force:data:tree:import -p data/plan.json -u $ORG_ALIAS && \
 echo ""
 EXIT_CODE="$?"
+
 
 # Check exit code
 echo ""
