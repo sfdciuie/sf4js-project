@@ -1,0 +1,26 @@
+[
+    {
+        "sobject": "Session__c",
+        "saveRefs": true,
+        "resolveRefs": false,
+        "files": [
+            "sessions.json"
+        ]
+    },
+    {
+        "sobject": "Speaker__c",
+        "saveRefs": true,
+        "resolveRefs": false,
+        "files": [
+            "speakers.json"
+        ]
+    },
+    {
+        "sobject": "Session_Speaker__c",
+        "saveRefs": false,
+        "resolveRefs": true,
+        "files": [
+            "session-speakers.json"
+        ]
+    }
+]

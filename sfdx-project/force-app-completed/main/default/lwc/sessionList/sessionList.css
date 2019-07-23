@@ -1,12 +1,6 @@
 :host {
     width: 100%;
-    margin: 0 1rem 1rem 1rem;
-}
-
-@media (min-width: 320px) and (max-width: 480px) {
-    :host {
-        margin: 0 0 1rem 0;
-    }
+    padding: 2rem;
 }
 
 .box {
@@ -17,23 +11,15 @@
     margin: auto;
     padding: 0.75rem 1.5rem;
 }
-.box.red {
-    border-left: 2px solid #da1a60;
+.box.orange {
+    border-top: 2px solid #ff8a00;
 }
 
-.box-header {
-    width: 100%;
-    display: flex;
-    justify-content: space-between;
-    align-items: flex-start;
-}
-
-.box-header button {
-    margin-top: 1.5rem;
-}
-
-h4 {
+h2 {
     font-weight: bold;
+    font-size: 1.5rem;
+    margin: 1.5rem 0;
+    color: #da1b60;
 }
 
 .list-wrapper {
@@ -77,9 +63,49 @@ button.brand:hover {
     border-color: #ff8a00;
 }
 
-dt {
-    margin-top: 1rem;
-    margin-bottom: 0.25rem;
-    font-weight: bold;
+.session {
+    display: block;
+    text-align: left;
+    margin: 0.5rem;
+    padding: 0.5rem;
     color: #424242;
+    background-color: transparent;
+    border-left: 3px solid #da1b60;
+    border-radius: 0 0.5rem 0.5rem 0;
+}
+
+.session:hover {
+    border-color: #ff8a00;
+    background-color: #f9f9f9;
+}
+
+.session .time {
+    color: #ff8a00;
+    padding-right: 0.25rem;
+}
+
+.session .title {
+    padding-left: 0.25rem;
+}
+
+.session:hover .title {
+    color: #000000;
+}
+
+.list-filters {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    margin-bottom: 1rem;
+}
+
+label {
+    margin-right: 1rem;
+    font-weight: bold;
+}
+
+input {
+    padding: 0.25rem;
+    border-radius: 0.25rem;
+    border-color: #ff8a00;
 }

@@ -11,19 +11,19 @@
         <valueSetDefinition>
             <sorted>false</sorted>
             <value>
-                <fullName>Room 1</fullName>
+                <fullName>Keynote_Room</fullName>
                 <default>false</default>
-                <label>Room 1</label>
+                <label>Keynote Room</label>
             </value>
             <value>
-                <fullName>Room 2</fullName>
+                <fullName>Breakout_Room_A</fullName>
                 <default>false</default>
-                <label>Room 2</label>
+                <label>Breakout Room A</label>
             </value>
             <value>
-                <fullName>Room 3</fullName>
+                <fullName>Breakout_Room_B</fullName>
                 <default>false</default>
-                <label>Room 3</label>
+                <label>Breakout Room B</label>
             </value>
         </valueSetDefinition>
     </valueSet>
