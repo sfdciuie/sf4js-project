@@ -1,5 +1,6 @@
-import { LightningElement, track, api, wire } from 'lwc';
+import { LightningElement, api, wire } from 'lwc';
 import getSessionWithSpeakers from '@salesforce/apex/SessionController.getSessionWithSpeakers';
+
 
 export default class SessionDetails extends LightningElement {
     @api recordId;
