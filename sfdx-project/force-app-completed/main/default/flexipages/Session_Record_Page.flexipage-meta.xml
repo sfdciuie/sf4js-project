@@ -12,6 +12,9 @@
             </componentInstanceProperties>
             <componentName>force:highlightsPanel</componentName>
         </componentInstances>
+        <componentInstances>
+            <componentName>sessionDetails</componentName>
+        </componentInstances>
         <mode>Replace</mode>
         <name>header</name>
         <type>Region</type>
@@ -38,7 +41,7 @@
     </flexiPageRegions>
     <flexiPageRegions>
         <componentInstances>
-            <componentName>sessionDetails</componentName>
+            <componentName>force:detailPanel</componentName>
         </componentInstances>
         <mode>Replace</mode>
         <name>detailTabContent</name>

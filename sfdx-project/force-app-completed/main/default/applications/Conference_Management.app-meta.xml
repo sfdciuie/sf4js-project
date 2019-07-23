@@ -1,15 +1,20 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <CustomApplication xmlns="http://soap.sforce.com/2006/04/metadata">
     <brand>
-        <headerColor>#0070D2</headerColor>
-        <shouldOverrideOrgTheme>false</shouldOverrideOrgTheme>
+        <headerColor>#FF8A00</headerColor>
+        <logo>applogo</logo>
+        <logoVersion>1</logoVersion>
+        <shouldOverrideOrgTheme>true</shouldOverrideOrgTheme>
     </brand>
+    <description>Manage sessions and speakers</description>
     <formFactors>Large</formFactors>
     <isNavAutoTempTabsDisabled>false</isNavAutoTempTabsDisabled>
     <isNavPersonalizationDisabled>false</isNavPersonalizationDisabled>
     <label>Conference Management</label>
     <navType>Standard</navType>
-    <tabs>Session_Management</tabs>
+    <tabs>Agenda</tabs>
+    <tabs>Session__c</tabs>
+    <tabs>Speaker__c</tabs>
     <uiType>Lightning</uiType>
     <utilityBar>Conference_Management_UtilityBar</utilityBar>
 </CustomApplication>
