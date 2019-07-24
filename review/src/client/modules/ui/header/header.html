@@ -1,0 +1,20 @@
+<template>
+    <header class="page-header">
+        <nav>
+            <h2 class="logo">
+                My Conf App
+            </h2>
+
+            <div class="actions">
+                <template if:true={loggedUser}>
+                    <span class="user-display-name"
+                        >{loggedUser.display_name}</span
+                    >
+                    <button type="button" class="brand" onclick={handleLogout}>
+                        Log Out
+                    </button>
+                </template>
+            </div>
+        </nav>
+    </header>
+</template>

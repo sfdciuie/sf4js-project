@@ -1,0 +1,52 @@
+{
+    "records": [
+        {
+            "attributes": {
+                "type": "Session_Speaker__c",
+                "referenceId": "Session_Speaker__cRef1"
+            },
+            "Speaker__c": "@Speaker__cRef3",
+            "Session__c": "@Session__cRef1"
+        },
+        {
+            "attributes": {
+                "type": "Session_Speaker__c",
+                "referenceId": "Session_Speaker__cRef2"
+            },
+            "Speaker__c": "@Speaker__cRef3",
+            "Session__c": "@Session__cRef2"
+        },
+        {
+            "attributes": {
+                "type": "Session_Speaker__c",
+                "referenceId": "Session_Speaker__cRef3"
+            },
+            "Speaker__c": "@Speaker__cRef2",
+            "Session__c": "@Session__cRef2"
+        },
+        {
+            "attributes": {
+                "type": "Session_Speaker__c",
+                "referenceId": "Session_Speaker__cRef4"
+            },
+            "Speaker__c": "@Speaker__cRef1",
+            "Session__c": "@Session__cRef3"
+        },
+        {
+            "attributes": {
+                "type": "Session_Speaker__c",
+                "referenceId": "Session_Speaker__cRef5"
+            },
+            "Speaker__c": "@Speaker__cRef2",
+            "Session__c": "@Session__cRef4"
+        },
+        {
+            "attributes": {
+                "type": "Session_Speaker__c",
+                "referenceId": "Session_Speaker__cRef6"
+            },
+            "Speaker__c": "@Speaker__cRef4",
+            "Session__c": "@Session__cRef4"
+        }
+    ]
+}

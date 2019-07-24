@@ -1,0 +1,44 @@
+{
+    "records": [
+        {
+            "attributes": {
+                "type": "Session__c",
+                "referenceId": "Session__cRef1"
+            },
+            "Name": "Everything you Need to Know About Rubber Ducks",
+            "Room__c": "Breakout_Room_A",
+            "Description__c": "Everything you need to know about rubber ducks. Learn about their unbelievable potential.",
+            "Date_and_Time__c": "2019-07-12T20:00:00.000+0000"
+        },
+        {
+            "attributes": {
+                "type": "Session__c",
+                "referenceId": "Session__cRef2"
+            },
+            "Name": "A Short Refresher on Cord Theory Presented in Latin",
+            "Room__c": "Breakout_Room_B",
+            "Description__c": "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.",
+            "Date_and_Time__c": "2019-07-12T21:00:00.000+0000"
+        },
+        {
+            "attributes": {
+                "type": "Session__c",
+                "referenceId": "Session__cRef3"
+            },
+            "Name": "Introducing Four Angled Triangles",
+            "Room__c": "Breakout_Room_B",
+            "Description__c": "Introducing a new geometrical theory: four angled triangles. See things from a different perspective.",
+            "Date_and_Time__c": "2019-07-12T20:00:00.000+0000"
+        },
+        {
+            "attributes": {
+                "type": "Session__c",
+                "referenceId": "Session__cRef4"
+            },
+            "Name": "Opening Keynote: the Meaning of Life",
+            "Room__c": "Keynote_Room",
+            "Description__c": "We're pleased to present our opening keynote on the meaning of life.",
+            "Date_and_Time__c": "2019-07-12T19:00:00.000+0000"
+        }
+    ]
+}

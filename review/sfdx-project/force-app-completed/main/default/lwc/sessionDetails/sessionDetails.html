@@ -1,0 +1,34 @@
+<template>
+    <template if:true={session.data}>
+        <div class="box orange">
+            <div class="box-header">
+                <h2>{session.data.Name}</h2>
+            </div>
+
+            <!-- Session fields -->
+            <dl>
+                <dt>Date and Time</dt>
+                <dv>{sessionTime}</dv>
+                <dt>Description</dt>
+                <dv>{session.data.Description__c}</dv>
+                <dt>Room</dt>
+                <dv>{session.data.Room__c}</dv>
+            </dl>
+
+            <!-- Speaker list -->
+            <h3>Speakers</h3>
+            <div class="speaker-list">
+                <template for:each={session.data.Session_Speakers__r} for:item="speaker">
+                    <c-speaker-card
+                        key={speaker.Speaker__r.Id}
+                        speaker={speaker.Speaker__r}
+                    ></c-speaker-card>
+                </template>
+            </div>
+
+        </div>
+    </template>
+    <template if:true={session.error}>
+        {session.error}
+    </template>
+</template>

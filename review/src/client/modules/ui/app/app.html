@@ -1,0 +1,24 @@
+<template>
+    <div class="page-wrapper">
+        <ui-header logged-user={loggedUser} onlogout={handleLogout}></ui-header>
+        <main class="page-main">
+            <!-- Login view -->
+            <template if:true={isLoginView}>
+                <ui-login-view onlogin={handleLogin}></ui-login-view>
+            </template>
+            <!-- Session list view -->
+            <template if:true={isSessionListView}>
+                <ui-session-list-view
+                    onnavigate={handleNavigate}
+                ></ui-session-list-view>
+            </template>
+            <!-- Session view -->
+            <template if:true={isSessionView}>
+                <ui-session-view
+                    session-id={view.params.sessionId}
+                    onnavigate={handleNavigate}
+                ></ui-session-view>
+            </template>
+        </main>
+    </div>
+</template>

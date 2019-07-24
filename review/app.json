@@ -1,0 +1,35 @@
+{
+    "name": "Conference Management App",
+    "description": "A conference management app built with Lightning Web Components Open Source",
+    "repository": "https://github.com/trailheadapps/sf4js-project",
+    "logo": "https://github.com/trailheadapps/sf4js-project/raw/master/src/client/resources/logo.svg",
+    "keywords": ["lightning", "salesforce", "web-components"],
+    "env": {
+        "SALESFORCE_LOGIN_DOMAIN": {
+            "description": "Salesforce authentication domain",
+            "value": "https://test.salesforce.com/",
+            "required": true
+        },
+        "SALESFORCE_CLIENT_ID": {
+            "description": "Consumer key from your Salesforce Connected App",
+            "value": "",
+            "required": true
+        },
+        "SALESFORCE_CLIENT_SECRET": {
+            "description": "Consumer secret from your Salesforce Connected App",
+            "value": "",
+            "required": true
+        },
+        "SALESFORCE_CALLBACK_URL": {
+            "description": "Callback URL used by your Salesforce Connected App",
+            "value": "https://INSERT_YOUR_DOMAIN/oauth2/callback",
+            "required": true
+        },
+        "NODE_SESSION_SECRET_KEY": {
+            "description": "A random string used to secure your server sessions",
+            "generator": "secret",
+            "required": true
+        }
+    },
+    "success_url": "/"
+}
